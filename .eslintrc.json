@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:vue/vue3-strongly-recommended",
+    "@vue/eslint-config-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "google"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "vue/html-indent": [
+      "error",
+      4
+    ],
+    "vue/script-indent": ["error", 4, {
+      "baseIndent": 1
+    }],
+    "indent": [
+      "error",
+      4
+    ],
+    "max-len": ["off"],
+    "camelcase": ["off"],
+    "require-jsdoc": ["off"]
+  },
+  // override basic indent for script. vue/script-indent will work
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "dist",
+    "vite.config.ts",
+    "*.d.ts"
+  ]
+}
